@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.action{
+    padding: 20px;
+    background-color: red;
+    text-align: center;
+}
+.action button{
+    border-radius: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}

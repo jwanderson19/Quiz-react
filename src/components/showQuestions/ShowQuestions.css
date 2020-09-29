@@ -1,0 +1,61 @@
+.question__content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    background-color: rgb(240, 247, 247);
+    justify-content: center;
+    height: 90vh;
+}
+.question{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    background-color: white;
+    border-right: 1px solid rgba(233, 143, 41, 0.63);
+    padding: 20px;
+}
+.question ul{
+    list-style: none;
+}
+.question ul li{
+    background-color: rgb(235, 74, 25);
+    padding: 5px;
+    margin: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    transition: all ease .2s;
+}
+.question ul li:hover{
+    opacity: .7;
+}
+.question__info{
+    width: 20%;
+    padding: 20px;
+    background-color: white;
+}
+.question__options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;  
+}
+.question__options .queston__ans{
+    width: 10%;
+    padding:10px;
+    background-color: darkgreen;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+.question__options button{
+    width: 100px;
+    height: 50px;
+    border-radius: 1px white;
+    cursor: pointer;
+}
