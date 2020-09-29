@@ -4,8 +4,15 @@ import './ShowQuestions.css'
 const ShowQuestions = ({category, difficulty, question, correct_answer, incorrect_answers,next})=>{
 
     
-    const [ checkCorrect, setCheckCorrect] = useState(false)
-   
+    const [ checkCorrect, setCheckCorrect ] = useState(
+        {
+            default: "white",
+            correct: "grenn",
+            wrong: "red"
+        }
+    )
+    const [ points, setPoints ] = useState(0)
+
     let incorrects = incorrect_answers.map(res => res)
     let options = []
     let questions = []
@@ -47,7 +54,7 @@ const ShowQuestions = ({category, difficulty, question, correct_answer, incorrec
     }
     
     useEffect(() => {
-       setCheckCorrect(false)
+        setCheckCorrect(false)
     },[next])
   
     return (
@@ -56,8 +63,21 @@ const ShowQuestions = ({category, difficulty, question, correct_answer, incorrec
                 <div className="question" style={{backgroundColor : checkCorrect ? "green" : "white"}}>
                     <h1>{question}</h1>
                     <ul>
-                        {questions.map((res, key) => (<li key={key} onClick={() => res === correct_answer ?setCheckCorrect(true) : setCheckCorrect(false)}>{res}</li>))}
+                        {
+                            questions.map((res, key) => (
+                                    <li 
+                                        key={key} 
+                                        onClick={() => res === correct_answer ?  setPoints(points + 1) & next(): next() } >
+                                        {res}
+                                    </li>
+                                    )
+                                )
+                        
+                        }
                     </ul>
+                    <div>
+                        <p>Acertos: <span>{points}</span></p>
+                    </div>
                     <div className="question__options">
                       
                         <div className="queston__options__action">
